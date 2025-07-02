@@ -1,28 +1,30 @@
+# ===========================================================================================================
+# ===========================================================================================================
 import os
 from .base import *  # noqa: F403
 from dotenv import load_dotenv
-
+from _core.settings.settings_tweaks.rest_framework_settings import LOCAL_REST_FRAMEWORK_SETTINGS
+from _core.settings.settings_tweaks.app_config import PRIORITY_APP,DJANGO_BUILT_IN_APP,PRODUCTION_APP,CUSTOM_APP
+from _core.settings.settings_tweaks.network_ip_config import PRODUCTION_ALLOWED_HOST
+from _core.settings.settings_tweaks.cors_config import PRODUCTION_ALLOWED_ORIGIN
+from _core.settings.settings_tweaks.django_admin_env_notice_config import *  # noqa: F403
 load_dotenv()
-ALLOWED_HOSTS = []
-
-ENV = os.getenv('DJANGO_ENV', 'local')
-dotenv_path = BASE_DIR / '.env' / f'.{ENV}' # noqa: F405
+ENV = os.getenv('DJANGO_ENV', 'production')
+dotenv_path = BASE_DIR / '.env' / f'.{ENV}'  # noqa: F405
 load_dotenv(dotenv_path=dotenv_path)
+# ===========================================================================================================
+# ===========================================================================================================
+ALLOWED_HOSTS = PRODUCTION_ALLOWED_HOST
+INSTALLED_APPS = PRIORITY_APP + DJANGO_BUILT_IN_APP + PRODUCTION_APP + CUSTOM_APP # noqa: F405
+CORS_ALLOWED_ORIGINS = PRODUCTION_ALLOWED_ORIGIN
+CORS_ALLOW_CREDENTIALS = True
 
-EXTERNAL_APP = [  # noqa: F405
-    "corsheaders",
-    'rest_framework',
-    'rest_framework_simplejwt',
-    
-]
-# installed App
-CUSTOM_APP = [
-    "coreapi",
-    "app.accounts",
-]
+
+
 
 WSGI_APPLICATION = '_core.wsgi.application'
-INSTALLED_APPS = PRIORITY_APP + DEFAULT_APP + EXTERNAL_APP + CUSTOM_APP # noqa: F405
+REST_FRAMEWORK = LOCAL_REST_FRAMEWORK_SETTINGS
+
 
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_HTTPONLY = True
@@ -40,11 +42,3 @@ ENVIRONMENT_NAME = "Production"
 ENVIRONMENT_COLOR = "#FF2222"
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.UserRateThrottle',
-    ],
-    'DEFAULT_THROTTLE_RATES': {
-        'user': '5/minute',
-    }
-}

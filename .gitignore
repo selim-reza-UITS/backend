@@ -6,3 +6,4 @@ __pycache__/
 !**/migrations/__init__.py
 
 .virtual_space
+db.sqlite3
