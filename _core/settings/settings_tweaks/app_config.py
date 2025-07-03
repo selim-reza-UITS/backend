@@ -25,13 +25,15 @@ LOCAL_APP = [  # noqa: F405
     'silk',
     'debug_toolbar',
     'django_extensions',
+    "ckeditor",
     
 ]
 
 PRODUCTION_APP = [  # noqa: F405
     "corsheaders",
     'rest_framework',
-    'rest_framework_simplejwt',    
+    'rest_framework_simplejwt', 
+    "ckeditor",   
 ]
 
 CUSTOM_APP = [
