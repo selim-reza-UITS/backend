@@ -7,3 +7,5 @@ __pycache__/
 
 .virtual_space
 db.sqlite3
+
+venv

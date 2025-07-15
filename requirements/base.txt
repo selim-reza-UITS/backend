@@ -45,6 +45,7 @@ python-dotenv==1.0.1
 pytz==2025.2
 pyyaml==6.0.2
 ruff==0.12.1
+shortuuid==1.0.13
 sqlparse==0.5.3
 tomli==2.2.1
 types-pyyaml==6.0.12.20241230
