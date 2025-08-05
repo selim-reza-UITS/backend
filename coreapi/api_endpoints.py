@@ -1,10 +1,11 @@
 from django.conf import settings
 from django.urls import path
 from django.conf.urls.static import static
+# from app.accounts.views import account_management_view as user_views
 from app.accounts.views import account_management_view as user_views
 from app.accounts.views import profile_management_view as profile_views
 from app.accounts.views import password_management_view as password_views
-from app.admin import views as admin_views
+from app.dashboard import views as admin_views
 urlpatterns = [
     # your existing URLs
     path("sign-up/",user_views.UserSignupView.as_view()),

@@ -2,7 +2,7 @@ argon2-cffi==25.1.0
 argon2-cffi-bindings==21.2.0
 asgiref==3.8.1
 autopep8==2.3.1
-backports-zoneinfo==0.2.1
+# backports-zoneinfo==0.2.1
 black==24.8.0
 cffi==1.17.1
 click==8.1.8

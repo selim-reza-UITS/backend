@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from app.admin.models import PrivacyPolicy, TermsConditions
+
+from app.dashboard.models import AboutUs, PrivacyPolicy, TermsConditions
+
 
 class PrivacyPolicySerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,4 +11,10 @@ class PrivacyPolicySerializer(serializers.ModelSerializer):
 class TermsConditionsSerializer(serializers.ModelSerializer):
     class Meta:
         model = TermsConditions
+        fields = ['content']
+
+
+class AboutUsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AboutUs
         fields = ['content']

@@ -39,5 +39,6 @@ PRODUCTION_APP = [  # noqa: F405
 CUSTOM_APP = [
     "coreapi",
     "app.accounts",
+    "app.dashboard"
 ]
 
