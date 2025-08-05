@@ -4,8 +4,4 @@ __pycache__/
 # Keep migrations folder, but ignore everything except __init__.py
 **/migrations/*
 !**/migrations/__init__.py
-
-.virtual_space
 db.sqlite3
-
-venv

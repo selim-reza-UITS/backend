@@ -50,3 +50,6 @@
 [2025-08-05 13:51:45,245] INFO [django.utils.autoreload] /home/reza/Code/07_joshlong/backend/app/dashboard/serializers/accounts_serializers.py changed, reloading.
 [2025-08-05 13:51:45,478] INFO [django.utils.autoreload] Watching for file changes with StatReloader
 [2025-08-05 13:52:31,513] INFO [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-08-05 13:59:02,801] INFO [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-08-05 13:59:48,530] INFO [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-08-05 14:00:14,071] INFO [django.utils.autoreload] Watching for file changes with StatReloader
