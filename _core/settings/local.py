@@ -7,15 +7,13 @@ from _core.settings.settings_tweaks.dashboard import JAZZMIN_DISPAY_SETTING
 from _core.settings.settings_tweaks.logging_settings import LOGGER_SETTINGS
 from _core.settings.settings_tweaks.rest_framework_settings import LOCAL_REST_FRAMEWORK_SETTINGS
 from _core.settings.settings_tweaks.app_config import PRIORITY_APP,DJANGO_BUILT_IN_APP,LOCAL_APP,CUSTOM_APP
-from _core.settings.settings_tweaks.db_config import LOCAL_SQLITE_CONFIG
+from _core.settings.settings_tweaks.db_config import LOCAL_POSTGRESQL_CONFIG
 from _core.settings.settings_tweaks.caches_config import LOCAL_CACHE_CONFIG
 from _core.settings.settings_tweaks.network_ip_config import LOCAL_ALLOWED_HOST,LOCAL_INTERNAL_IP
 from _core.settings.settings_tweaks.middleware_config import LOCAL_MIDDLEWARE_ADDED
 from _core.settings.settings_tweaks.django_admin_env_notice_config import *  # noqa: F403
 load_dotenv()
-ENV = os.getenv('DJANGO_ENV', 'local')
-dotenv_path = BASE_DIR / '.env' / f'.{ENV}'  # noqa: F405
-load_dotenv(dotenv_path=dotenv_path)
+
 # ===========================================================================================================
 # ===========================================================================================================
 SECRET_KEY = os.getenv("SECRET_KEY")
@@ -31,7 +29,7 @@ MIDDLEWARE += LOCAL_MIDDLEWARE_ADDED  # noqa: F405
 WSGI_APPLICATION = '_core.wsgi.application'
 #
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DATABASES = LOCAL_SQLITE_CONFIG
+DATABASES = LOCAL_POSTGRESQL_CONFIG
 # 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Dhaka'

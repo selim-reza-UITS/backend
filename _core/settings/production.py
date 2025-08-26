@@ -9,9 +9,7 @@ from _core.settings.settings_tweaks.network_ip_config import PRODUCTION_ALLOWED_
 from _core.settings.settings_tweaks.cors_config import PRODUCTION_ALLOWED_ORIGIN
 from _core.settings.settings_tweaks.django_admin_env_notice_config import *  # noqa: F403
 load_dotenv()
-ENV = os.getenv('DJANGO_ENV', 'production')
-dotenv_path = BASE_DIR / '.env' / f'.{ENV}'  # noqa: F405
-load_dotenv(dotenv_path=dotenv_path)
+
 # ===========================================================================================================
 # ===========================================================================================================
 ALLOWED_HOSTS = PRODUCTION_ALLOWED_HOST
